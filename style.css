@@ -1,0 +1,151 @@
+/* 1. El contenedor que divide la pantalla en dos */
+/* 1. Centrado general de la página con bordes laterales de 2cm */
+/* 1. Centrado general de la página con bordes laterales de 2cm */
+/* 1. Configuración General y Centrado */
+body {
+    margin: 0;
+    padding: 0 2cm; /* Bordes laterales exactos de 2cm */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+/* 2. Contenedor Principal Simétrico */
+.contenedor-principal {
+    display: flex;         
+    gap: 40px;            /* Espacio de seguridad para que no choquen las columnas */
+    margin: 40px auto;    /* Centra el contenedor en la página */
+    max-width: 100%;      /* Aprovecha el espacio entre los 2cm laterales */
+    align-items: stretch; /* Hace que ambas columnas intenten medir lo mismo de alto */
+    padding: 20px;
+    background: white;    
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* 3. Columna Izquierda (Tabla y Resumen) */
+.contenido-texto {
+    flex: 1;              /* Misma proporción que las imágenes */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+h1 {
+    font-size: 26px;
+    color: #1d1572; /* Azul Google */
+    font-family: 'Google Sans', Arial, sans-serif;
+    margin-bottom: 20px;
+    padding-bottom: 8px; /* Espacio entre el texto y la línea */
+    border-bottom: 2px solid #1d1572; /* Línea azul claro (como el encabezado de la tabla) */
+    display: block; /* Hace que la línea abarque el ancho de su columna */
+    text-transform: capitalize; /* Primera letra de cada palabra en Mayúscula */
+    font-weight: 500;
+}
+
+/* Título secundario (Datos Ordenados) */
+h2 {
+    font-size: 18px;
+    color: #202124;
+    margin-top: 25px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+
+/* Tabla con Bordes Negros */
+
+/* Cuadro de Resumen: Estilo Blanco con Borde Azul */
+.cuadro-resumen {
+    margin-top: auto;      /* Lo empuja hacia abajo si hay espacio */
+    background-color: #ffffff; /* Fondo blanco */
+    border: 2px solid #3498db; /* Borde azul como estaba al principio */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.cuadro-resumen h3 {
+    margin: 0 0 10px 0;
+    color: #2c3e50;
+}
+
+/* 4. Columna Derecha (Imágenes en Vertical) */
+.grupo-imagenes {
+    flex: 1;              /* Misma proporción que la columna de texto */
+    display: flex;        
+    flex-direction: column; 
+    gap: 20px;            /* Espacio entre imágenes igual al de la columna izquierda */
+}
+
+/* Ajuste de Imágenes para que coincidan con los bordes */
+.grupo-imagenes img {
+    width: 100% !important; /* Abarca todo el ancho de su columna */
+    height: 300px;        /* Altura fija para mantener el orden */
+    object-fit: contain;  
+    background-color: #fff;
+    border: 1px solid black; 
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box; /* Asegura que el borde no ensanche la imagen */
+}/* 7. Estilo de la Tabla Reparado y Mejorado */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Une las líneas para que no se vean dobles */
+    margin-top: 20px;
+    background-color: #ffffff;
+    border: 1px solid #000; /* Borde exterior negro fino */
+}
+
+th {
+    /* Un azul más claro y moderno para el encabezado */
+    background-color: #25618a; 
+    color: white;
+    padding: 12px 8px;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid #000; /* Bordes negros para los títulos */
+}
+
+td {
+    border: 1px solid #000; /* Bordes negros para las celdas de datos */
+    padding: 10px;
+    text-align: center;
+    font-size: 13px;
+    color: #333;
+}
+
+/* El efecto "uno y uno": Filas pares en gris muy claro */
+tr:nth-child(even) {
+    background-color: #f2f2f2; 
+}
+
+/* Filas impares en blanco puro para que resalte el contraste */
+
+/* Efecto visual al pasar el ratón (opcional, ayuda a la lectura) */
+
+ul {
+    font-size: 0.9em;
+    background: #ffffff;      /* Fondo blanco limpio */
+    padding: 20px 40px;
+    border-radius: 8px;
+    border: 2px solid #555;   /* Borde gris oscuro/negro para que se vea decente */
+        /* Quita los puntos si prefieres que se vea como bloque */
+    line-height: 1.8;         /* Espacio entre líneas de datos */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+/* Estilo del Título Principal tipo Google */
+.titulo-pagina {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.titulo-pagina h1 {
+    font-family: 'Google Sans', Arial, sans-serif; /* Fuente tipo Google */
+    font-size: 42px;
+    font-weight: 500;
+    color: #202124; /* Gris oscuro característico de Google */
+    border-bottom: none; /* Quitamos la línea para que sea un encabezado limpio */
+    text-transform: none; /* Mantener mayúsculas/minúsculas naturales */
+    margin: 0;
+}
